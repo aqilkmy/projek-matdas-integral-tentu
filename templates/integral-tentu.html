@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral Tentu</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" as="script">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript">
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>INTEGRAL TENTU</h1>
+    <h3>Menggunakan metode numerik integral aturan trapesium</h3>
+    <div class="container">
+        <div class="flex-container left">
+            <form action="/" method="POST">
+                <label for="func">Masukkan fungsi:</label>
+                <input type="text" id="func" name="func" required><br><br>
+                <label for="bts-bwh">Masukkan batas bawah:</label>
+                <input type="text" id="bts-bwh" name="bts-bwh" required><br><br>
+                <label for="bts-ats">Masukkan batas atas:</label>
+                <input type="text" id="bts-ats" name="bts-ats" required><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div class="flex-container right">
+            {% if soal and input_fungsi %}
+                <p>Integral tak tentu dari: <span class="math">\( {{ soal }} \)</span></p>
+                <p>Batas atas: {{ b }}</p>
+                <p>Batas bawah: {{ a }}</p>
+            {% endif %}
+            {% if soal %}
+                <p>adalah: {{ format_hasil }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turunan</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <form action="/" method="GET">
+        <input type="submit" value="Home">
+    </form>
+    <h1>Turunan</h1>
+    <form action="/turunan" method="POST">
+        <label for="func">Masukkan fungsi:</label>
+        <input type="text" id="func" name="func" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if soal %}
+        <p>Turunan dari : </p>
+        <pre>{{ soal }}</pre>
+    {% endif %}
+    {% if soal %}
+        <p>adalah:</p>
+        <pre>{{ hasil }}</pre>
+    {% endif %}
+</body>
+</html>
